@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body
+        {
+       background-color: azure;
+        }
+    </style>
+</head>
+<body >
+    <center>
+    <h1>Html page</h1>
+    <button><a href="/addbook">Add Book</a></button>
+
+    <h2>Book details</h2>
+    <table border="1">
+        <tr>
+            <th>Book Id</th>
+            <th>Book Title</th>
+            <th>Book Author</th>
+            <th>Book price</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{book.id}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.price}}</td>
+            <td>
+                <a href="/delete/{{book.id}}">Delete</a>
+                <a href="/update/{{book.id}}">Update</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    </center>
+</body>
+</html>
